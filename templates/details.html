@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block title %}details{% endblock %}
+{% block body %}
+<a href="{% url 'feed:home' %}">
+&leftarrow;
+</a>
+{{object.text}}
+{% thumbnail object.image "200x200" crop="center" as im %}
+    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+{% endthumbnail %}
+{% endblock %}

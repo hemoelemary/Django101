@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}addpost{% endblock %}
+{% block body %}
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<label for="text">Text</label>
+{{form.text}}
+<label for="image">Image</label>
+{{form.image}}
+<input type="submit" value="submit">
+</form>
+{% endblock %}

@@ -2,10 +2,14 @@
 {% load thumbnail %}
 {% block title %}Home{% endblock %}
 {% block body %}
+<a href="{%url 'feed:post'%}">
+  To Post  &rarr;
+</a>
 {% for post in objects %}
 <h1>{{post.text}}</h1>
 {% thumbnail post.image "100x100" crop="center" as im %}
     <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
 {% endthumbnail %}
+
 {% endfor %}
 {% endblock %}
